@@ -8,7 +8,6 @@ export default function UseInputState (initialVal) {
     };
 
     const reset = (e) => {
-        // e.preventDefault()
         setVal("")
     };
     return [val, handleChange, reset]
