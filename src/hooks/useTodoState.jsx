@@ -2,7 +2,7 @@ import useLocalStorageState from "./useLocalStorageState"
 import {v4 as uuidv4} from "uuid";
 
 
-function UseTodoState(initialTodos, populateList){
+function UseTodoState(initialTodos){
     const [todos, setTodos] = useLocalStorageState("todos", initialTodos);
 
     return {

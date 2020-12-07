@@ -11,7 +11,7 @@ import {TodosContext} from "./Contexts/TodosContext";
 
  function TodoItem(props) {
     const [isEditing, toggle] = useState(false);
-    const {toggleTodo, deleteTodo} = useContext(TodosContext);
+    const {dispatch} = useContext(TodosContext);
 
     function UseToggle(){
         toggle(!isEditing)
@@ -22,14 +22,14 @@ import {TodosContext} from "./Contexts/TodosContext";
     {isEditing ? <EditForm task={props.task} id={props.id} toggle={UseToggle} /> :
     <>
       <ListItemText style={{textDecoration: props.completed ? "line-through": "none"}}>
-        <Checkbox tabIndex={-1} checked={props.completed} onClick={()=>toggleTodo(props.id)}/>
+        <Checkbox tabIndex={-1} checked={props.completed} onClick={()=>dispatch({type:"toggle", id: props.id})}/>
         {props.task}
       </ListItemText>
       <ListItemSecondaryAction>
         <IconButton aria-label="Edit" onClick={UseToggle}>
           <EditIcon />
         </IconButton>
-        <IconButton aria-label="Delete"  style={{color:"orangered"}} onClick={()=> deleteTodo(props.id)}>
+        <IconButton aria-label="Delete"  style={{color:"orangered"}} onClick={()=> dispatch({type: "delete", id: props.id})}>
           <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>

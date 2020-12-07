@@ -20,9 +20,7 @@ const {todos} = useContext(TodosContext)
                   <TodoItem
                   {...todo}
                     completed={todo.completed}
-                    deleteTodo={props.deleteTodo}
-                    toggleTodo={props.toggleTodo}
-                    editTodo={props.editTodo}
+                    key={todo.id}
                   />
              
               {i < todos.length -1 && <Divider/ >}

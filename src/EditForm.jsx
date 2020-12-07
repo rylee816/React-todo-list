@@ -5,14 +5,15 @@ import {TodosContext} from "./Contexts/TodosContext";
 
 function EditForm(props) {
 
-  const {editTodo} = useContext(TodosContext);
+  const {dispatch} = useContext(TodosContext);
   const [task, editTask] = useInputState(props.task);
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        editTodo(props.id, task);
+        dispatch({type: "edit", id: props.id, text:task})
+        // editTodo(props.id, task);
         props.toggle();
       }}
       style={{marginLeft:"1rem", width:"50%"}}
