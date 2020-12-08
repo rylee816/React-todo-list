@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import TodoProvider from "./Contexts/TodosContext";
 
 export default function TodoApp() {
+  const url = `url("https://www.transparenttextures.com/patterns/black-linen.png")`
  
   return (
     <Paper
@@ -16,7 +17,8 @@ export default function TodoApp() {
         padding: 0,
         margin: 0,
         height: "100vh",
-        backgroundColor: "#fafafa",
+        backgroundColor: "#b0aacc",
+        backgroundImage: url
       }}
       elevation={0}
     >
