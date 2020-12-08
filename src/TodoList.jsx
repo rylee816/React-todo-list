@@ -7,7 +7,7 @@ import {TodosContext} from "./Contexts/TodosContext";
 
 
 export default function TodoList(props) {
-const {todos} = useContext(TodosContext)
+const todos = useContext(TodosContext)
 
   return (
     <Paper>
