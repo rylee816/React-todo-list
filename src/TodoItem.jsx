@@ -1,4 +1,4 @@
-import {useState, useContext} from "react";
+import {useState, useContext, memo} from "react";
 import EditForm from "./EditForm";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -8,6 +8,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import {DispatchContext} from "./Contexts/TodosContext";
+
 
  function TodoItem(props) {
     const [isEditing, toggle] = useState(false);
@@ -38,4 +39,4 @@ import {DispatchContext} from "./Contexts/TodosContext";
     </ListItem>
   );
 }
-export default TodoItem;
+export default memo (TodoItem);
