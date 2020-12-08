@@ -17,8 +17,13 @@ export default function TodoApp() {
         padding: 0,
         margin: 0,
         height: "100vh",
+        clear: "both",
         backgroundColor: "#b0aacc",
-        backgroundImage: url
+        backgroundImage: url,
+        backgroundSize: "100vh",
+        boxSizing:"border-box",
+        overflow: "hidden",
+        overflowY: "scroll"
       }}
       elevation={0}
     >

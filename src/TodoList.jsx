@@ -11,8 +11,8 @@ const todos = useContext(TodosContext)
 
   return (
     <Paper>
-      <List>
-      <h1 style={{color:"slategrey"}}>Todo List</h1>
+      <List style={{clear: "both"}} >
+      <h1 style={{color:"slateGrey"}}>Todo List</h1>
 
         {todos.map((todo, i) => {
           return (
